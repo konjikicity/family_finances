@@ -1,11 +1,9 @@
 volumes:
   db-store:
   psysh-store:
-
 configs:
   db-config:
     file: ./infra/docker/mysql/my.cnf
-
 services:
   app:
     build:
@@ -29,7 +27,6 @@ services:
       - DB_DATABASE=${DB_DATABASE:-laravel}
       - DB_USERNAME=${DB_USERNAME:-phper}
       - DB_PASSWORD=${DB_PASSWORD:-secret}
-
   web:
     build:
       context: .
@@ -43,7 +40,6 @@ services:
       - type: bind
         source: ./src
         target: /workspace
-
   db:
     build:
       context: .
@@ -67,7 +63,6 @@ services:
       - MYSQL_USER=${DB_USERNAME:-phper}
       - MYSQL_PASSWORD=${DB_PASSWORD:-secret}
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD:-secret}
-
   mailpit:
     image: axllent/mailpit
     ports:

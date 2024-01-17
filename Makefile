@@ -38,7 +38,7 @@ ps:
 	docker compose ps
 web:
 	docker compose exec web bash
-app:
+exec:
 	docker compose exec app bash
 tinker:
 	docker compose exec app php artisan tinker
